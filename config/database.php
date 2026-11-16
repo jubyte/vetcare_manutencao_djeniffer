@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'vetcare';
+$db = 'vetcare';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
@@ -13,3 +13,4 @@ try {
 } catch (PDOException $e) {
     die('Erro ao conectar ao banco: ' . $e->getMessage());
 }
+?>
