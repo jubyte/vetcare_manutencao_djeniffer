@@ -2,14 +2,17 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 $titulo = $titulo ?? 'VetCare';
 ?>
+
 <!doctype html>
 <html lang="pt-br">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?= htmlspecialchars($titulo) ?> | VetCare</title>
 <link rel="stylesheet" href="/vetcare_manutencao_djeniffer/assets/style.css">
 </head>
+
 <body>
 <header class="topbar">
   <a class="brand" href="/vetcare_manutencao_djeniffer/index.php">🐾 VetCare</a>
@@ -25,3 +28,6 @@ $titulo = $titulo ?? 'VetCare';
   </nav>
 </header>
 <main class="container">
+</body>
+
+</html>
