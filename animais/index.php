@@ -19,8 +19,16 @@ include __DIR__ . '/../includes/header.php'; ?>
             <th>Idade</th>
             <th>Ações</th>
         </tr>
+        
         <?php foreach ($rows as $r):
-            $idade = $r['nascimento'] ? date('Y') - (int) date('Y', strtotime($r['nascimento'])) : 0; ?>
+                $idade = 0;
+                if ($r['nascimento']) {
+                    $nascimento = new DateTime($r['nascimento']);
+                    $hoje = new DateTime();
+                    $idade = $hoje->diff($nascimento)->y;
+                }
+            ?>
+
             <tr>
                 <td><?= htmlspecialchars($r['nome']) ?></td>
                 <td><?= htmlspecialchars($r['especie']) ?></td>
