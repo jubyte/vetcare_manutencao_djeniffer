@@ -5,7 +5,7 @@ exigirLogin();
 $titulo = 'Tutores';
 $busca = trim($_GET['busca'] ?? '');
 $sql = "SELECT * FROM tutores WHERE nome LIKE ?";
-$param = ['%' . (explode(' ', $busca)[0]) . '%'];
+$param = ['%' . $busca . '%'];
 if ($busca === '') {
     $sql = "SELECT * FROM tutores";
     $param = [];
