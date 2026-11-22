@@ -14,8 +14,14 @@ $erro = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST['data_consulta'] ?? '';
     $dt = str_replace('T', ' ', $data) . (strlen($data) === 16 ? ':00' : '');
-    if (trim($_POST['veterinario'] ?? '') === '')
+    
+    if ($data === '')
+        $erro = 'Informe a data da consulta.';
+    elseif (date('Y-m-d', strtotime($data)) < date('Y-m-d'))
+        $erro = 'A data da consulta não pode ser anterior à data atual.';
+    elseif (trim($_POST['veterinario'] ?? '') === '')
         $erro = 'Informe o veterinário.';
+    
     else {
         $dados = [(int) $_POST['animal_id'], $dt, $_POST['veterinario'], $_POST['motivo'], $_POST['status'], $_POST['observacoes']];
         if ($id) {
