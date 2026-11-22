@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $telefone = trim($_POST['telefone'] ?? '');
     if ($nome === '')
         $erro = 'Informe o nome.';
+    elseif ($telefone !== '' && !preg_match('/^[0-9()\-\s+]+$/', $telefone))
+        $erro = 'Telefone inválido.';
     else {
         if ($id) {
             $s = $pdo->prepare("UPDATE tutores SET nome=?,telefone=?,email=?,endereco=?,ativo=? WHERE id=?");
