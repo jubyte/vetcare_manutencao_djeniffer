@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'vetcare';
+$db = 'vetcare_djeniffer';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';

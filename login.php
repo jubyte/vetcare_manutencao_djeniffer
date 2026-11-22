@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erro = 'Senha incorreta.';
     } else {
 
+        session_regenerate_id(true);
         $_SESSION['usuario_id'] = $conta['id'];
         $_SESSION['usuario_nome'] = $conta['nome'];
         header('Location: index.php');
