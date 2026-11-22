@@ -15,8 +15,12 @@ $erro = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = trim($_POST['nome'] ?? '');
     $especie = trim($_POST['especie'] ?? '');
+
     if ($nome === '')
         $erro = 'Informe o nome do animal.';
+    elseif ($especie === '')
+        $erro = 'Informe a espécie do animal.';
+
     else {
         $dados = [(int) $_POST['tutor_id'], $nome, $especie, $_POST['raca'], $_POST['nascimento'] ?: null, $_POST['sexo'], $_POST['observacoes']];
         if ($id) {
@@ -43,7 +47,7 @@ include __DIR__ . '/../includes/header.php'; ?>
             </select></div>
         <div class="field"><label>Nome *</label><input name="nome" value="<?= htmlspecialchars($r['nome']) ?>" required>
         </div>
-        <div class="field"><label>Espécie</label><input name="especie" value="<?= htmlspecialchars($r['especie']) ?>">
+        <div class="field"><label>Espécie *</label><input name="especie" value="<?= htmlspecialchars($r['especie']) ?>" required>
         </div>
         <div class="field"><label>Raça</label><input name="raca" value="<?= htmlspecialchars($r['raca']) ?>"></div>
         <div class="field"><label>Data de nascimento</label><input type="date" name="nascimento"
