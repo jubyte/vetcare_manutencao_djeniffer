@@ -39,7 +39,11 @@ include __DIR__ . '/../includes/header.php'; ?>
                 <td><?= htmlspecialchars($r['veterinario']) ?></td>
                 <td><?= htmlspecialchars($r['motivo']) ?></td>
                 <td><?= htmlspecialchars($r['status']) ?></td>
-                <td><a href="form.php?id=<?= $r['id'] ?>">Editar</a> | <a href="excluir.php?id=<?= $r['id'] ?>">Excluir</a></td>
+                <td>
+                    <a href="form.php?id=<?= $r['id'] ?>">Editar</a> | 
+                    <a href="excluir.php?id=<?= $r['id'] ?> "onclick="return confirm('Deseja excluir esta consulta?')">Excluir</a>
+                </td>
+                
             </tr><?php endforeach; ?>
     </table>
 </div>
