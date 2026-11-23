@@ -42,3 +42,6 @@ O arquivo `DOCENTE_GABARITO.md` contém o inventário das falhas intencionais. N
 - `includes/`: cabeçalho e navegação
 - `tutores/`, `animais/`, `consultas/`: operações CRUD
 - `database/vetcare.sql`: banco e dados fictícios
+
+## Observação 
+Durante a abertura dos chamados para registro dos incidentes, ocorreu um equívoco na ordem de identificação. Os números dos chamados ficaram deslocados em uma posição: o chamado 1 corresponde ao chamado 2 da documentação, o chamado 2 corresponde ao chamado 3, e assim sucessivamente. Dessa forma, o chamado 13 corresponde ao chamado 1. Portanto, ao consultar os chamados no sistema, considere essa diferença de numeração para relacioná-los corretamente aos erros documentados.
